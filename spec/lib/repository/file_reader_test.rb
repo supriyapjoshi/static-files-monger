@@ -19,12 +19,12 @@ module StaticFileMonger
           }.to_json
         end
         before do
-        #  expect(Dir).to receive(:glob).with('data/components/*.json').and_return(['data/components/first.json', 'data/components/second.json'])
-         # expect(IO).to receive(:read).with('data/components/first.json').and_return first_component_json
-         # expect(IO).to receive(:read).with('data/components/second.json').and_return second_component_json
+         expect(Dir).to receive(:glob).with('data/components/*.json').and_return(['data/components/first.json', 'data/components/second.json'])
+         #expect(IO).to receive(:read).with('data/components/first.json').and_return first_component_json
+         #expect(IO).to receive(:read).with('data/components/second.json').and_return second_component_json
         end
         it 'reads the index of component ids' do
-          expect(subject.index).to eql(0)
+          expect(subject.index).to eql(['first','second'])
         end
       end
     end
