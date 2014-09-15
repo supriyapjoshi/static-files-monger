@@ -15,4 +15,4 @@ gem 'rack'
 gem 'json'
 gem 'webmachine'
 gem 'faraday'
-
+gem 'activesupport'
