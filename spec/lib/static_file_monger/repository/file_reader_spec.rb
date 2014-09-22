@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'repository/file_reader'
+require 'static_file_monger/repository/file_reader'
 require 'active_support/core_ext'
 
 module StaticFileMonger

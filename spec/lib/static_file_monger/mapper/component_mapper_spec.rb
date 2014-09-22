@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'mapper/component_mapper'
+require 'static_file_monger/mapper/component_mapper'
 
 module StaticFileMonger
   module Mapper
