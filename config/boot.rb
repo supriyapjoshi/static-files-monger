@@ -18,4 +18,3 @@ end
 require 'active_support/core_ext/hash'
 require 'active_support/core_ext/class/attribute'
 
-require 'static_file_monger'
