@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'static_file_monger/mapper/component_mapper'
+require 'active_support/core_ext'
 
 module StaticFileMonger
   module Mapper
@@ -14,6 +15,7 @@ module StaticFileMonger
             class: "app",
             business_processes_involved: "component creation"
           }.to_json
+        end
         let (:component_mapping) do
           {"identity"=>{"name"=>"label", "connected"=>"business_processes_involved"}}
         end
@@ -21,18 +23,17 @@ module StaticFileMonger
           {
             type: "identity",
             name: "Component Name",
+            connected: ["component creation"],
             description: "Description for the component",
             custodians: "Custodian list",
             git_path: "my_path",
-            class: "app",
-            connected: ["component creation"]
-          }
+            class: "app"
+          }.to_json
         end
         it "does the mapping for the component" do
-          expect(subject.map(component_json).with(component_mapping)).should eql(mapped_component)
+          expect(subject.map(component_json)).to eql(mapped_component)
         end
       end
-    end
     end
   end
 end
