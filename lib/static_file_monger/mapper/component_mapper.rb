@@ -13,8 +13,6 @@ module StaticFileMonger
                          "connected"=>["#{component_parsed.delete(@component_map["identity"]["connected"])}"]}
         puts component_parsed
         rational_json.merge!(component_parsed).to_json
-
-        #@component_map["identity"]
       end
     end
   end
