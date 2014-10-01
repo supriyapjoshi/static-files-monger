@@ -13,17 +13,17 @@ module StaticFileMonger
             label: "Component Name",
             git_path: "my_path",
             class: "app",
-            business_processes_involved: "component creation"
+            business_processes_involved: ["component creation","component update"]
           }.to_json
         end
         let (:component_mapping) do
-          {"identity"=>{"name"=>"label", "connected"=>"business_processes_involved"}}
+          {"identity"=>{"name"=>"label", "connected"=>{"business_processes_involved"=>"id"}}}
         end
         let (:mapped_component) do
           {
             type: "identity",
             name: "Component Name",
-            connected: ["component creation"],
+            connected: ["component creation", "component update"],
             description: "Description for the component",
             custodians: "Custodian list",
             git_path: "my_path",
